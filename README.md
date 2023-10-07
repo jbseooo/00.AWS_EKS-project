@@ -23,7 +23,7 @@
 <img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white">
 
 </div>
-
+### 프로젝트 기간 : 23.10.01 ~ 진행중
 
 ## AWS 구성도(~ing)
 ![v1](https://github.com/jbseooo/Project_aws-eks/assets/108344718/5fda39ff-29e0-47ed-8b0a-40f3caef81de)
