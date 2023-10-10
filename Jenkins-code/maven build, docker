@@ -9,14 +9,14 @@ pipeline {
         stage ('git clone') {
             steps {
                 sh  """
-                    git clone https://github.com/kimdragon50/facam-backend.git 
+                    git clone https://github.com/jbseooo/Project-aws-eks.git
                     """
             }
         }
         stage ('Maven Build') {
             steps {
                 sh  """
-                    cd /home/ubuntu/workspace/test_docker-hub/facam-backend
+                    cd /home/ubuntu/workspace/test_docker-hub/Project-aws-eks/backend-code
                     mvn clean
                     mvn package 
                     """
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     sh  """
-                        cd /home/ubuntu/workspace/test_docker-hub/facam-backend
+                        cd /home/ubuntu/workspace/Project-aws-eks/backend-code
                         git clone https://github.com/jominjun94/ansible_repository.git
                         cd ansible_repository
                         mv * ../

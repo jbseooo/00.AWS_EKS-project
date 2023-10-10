@@ -2,13 +2,13 @@
 
   tasks:
   - name: create a docker image with deployed waf file
-    command: docker build -t jch941022/1005 .
+    command: docker build -t jbseo123/project-aws .
     args: 
         chdir: /home/ubuntu/slave/workspace/tsesr1/spring_repository
     
   - name: push the image on Docker Hub
-    command: docker push jch941022/1005
+    command: docker push jbseo123/project-aws
 
   - name: remove the docker image from the ansible server
-    command: docker rmi jch941022/1005
+    command: docker rmi jbseo123/project-aws
     ignore_errors: yes
