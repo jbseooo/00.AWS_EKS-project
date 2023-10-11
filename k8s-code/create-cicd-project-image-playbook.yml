@@ -4,7 +4,7 @@
   - name: create a docker image with deployed waf file
     command: docker build -t jbseo123/project-aws .
     args: 
-        chdir: /home/ubuntu/slave/workspace/tsesr1/spring_repository
+        chdir: /home/ubuntu/slave/workspace/slave/Project-aws-eks/backend-code
     
   - name: push the image on Docker Hub
     command: docker push jbseo123/project-aws
