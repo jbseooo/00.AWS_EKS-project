@@ -3,7 +3,7 @@
   
   tasks: 
   - name: delete the previous deployment
-    command: git clone https://github.com/jominjun94/gitops-repository.git
+    command: git clone https://github.com/jbseooo/gitops-repository.git
 
   - name: create a deployment
-    command: kubectl apply -f gitops-repository/service/eks-manifest/application.yaml
+    command: kubectl apply -f gitops-repository/backend/application.yaml
