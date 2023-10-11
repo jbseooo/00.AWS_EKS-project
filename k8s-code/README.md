@@ -10,4 +10,4 @@
 ## argo-cd-deploy-playbook
 - 이 코드의 경우 argocd gitops을 통해 k8s을 관리하기 위한 ansible playbook 입니다.
 - 해당 코드는 gitops-repository을 참고하며, 이를 통해 사전에 docker hub에 있는 이미지를 배포 및 service을 실행시킵니다.
-
+- gitops-repository URL : https://github.com/jbseooo/gitops-repository
