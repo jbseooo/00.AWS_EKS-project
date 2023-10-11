@@ -1,43 +1,40 @@
 pipeline {
-    agent {label 'slave1'}
+    agent { label 'slave' }
     stages {
-        stage ('Workspace Clean') {
+        stage('Workspace Clean') {
             steps {
-             cleanWs()
+                cleanWs()
             }
         }
-        stage ('git clone') {
+        stage('git clone') {
             steps {
-                sh  """
+                sh """
+                    cd /home/ubuntu/slave/workspace/slave
                     git clone https://github.com/jbseooo/Project-aws-eks.git
-                    """
+                """
             }
         }
-        stage ('Maven Build') {
+        stage('Maven Build') {
             steps {
-                sh  """
-                    cd /home/ubuntu/workspace/test_docker-hub/Project-aws-eks/backend-code
+                sh """
+                    cd /home/ubuntu/slave/workspace/slave/Project-aws-eks/backend-code
                     mvn clean
-                    mvn package 
-                    """
+                    mvn package
+                """
             }
         }
 
-        stage ('Ansible Deploy docker hub') {
+        stage('Ansible Deploy docker hub') {
             steps {
                 script {
-                    sh  """
-                        cd /home/ubuntu/workspace/Project-aws-eks/backend-code
-                        git clone https://github.com/jominjun94/ansible_repository.git
-                        cd ansible_repository
-                        mv * ../
-                        cd ..
+                    sh """
+                        mv /home/ubuntu/slave/workspace/slave/Project-aws-eks/DockerFile /home/ubuntu/slave/workspace/slave/Project-aws-eks/backend-code
+                        mv /home/ubuntu/slave/workspace/slave/Project-aws-eks/k8s-code/* /home/ubuntu/slave/workspace/slave/Project-aws-eks/backend-code
+                        cd /home/ubuntu/slave/workspace/slave/Project-aws-eks/backend-code
                         ansible-playbook create-cicd-project-image-playbook.yml
-
-                        """
+                    """
                 }
             }
         }
-
     }
 }
