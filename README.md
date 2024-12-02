@@ -27,7 +27,7 @@
 
 
 ## AWS 구성도
-![v1](https://github.com/jbseooo/Project_aws-eks/assets/108344718/5fda39ff-29e0-47ed-8b0a-40f3caef81de)
+![273146704-5fda39ff-29e0-47ed-8b0a-40f3caef81de](https://github.com/user-attachments/assets/2244406b-05a5-45a2-8950-e952c6691b16)
 
 
 
